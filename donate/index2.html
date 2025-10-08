@@ -18,7 +18,6 @@
       --primary-color: #6366f1;
       --secondary-color: #8b5cf6;
       --monero-color: #ff6600;
-      --litecoin-color: #345d9d;
       --bg-color: #ffffff;
       --surface-color: #f8fafc;
       --text-primary: #1e293b;
@@ -147,7 +146,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -158,24 +157,11 @@
       margin-bottom: 3rem;
     }
 
-    .header-icon-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
     .header-icon {
       font-size: 4rem;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .header-icon.monero {
       color: var(--monero-color);
-    }
-
-    .header-icon.litecoin {
-      color: var(--litecoin-color);
+      margin-bottom: 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     @keyframes pulse {
@@ -201,14 +187,6 @@
       line-height: 1.8;
     }
 
-    /* Donation Cards Grid */
-    .donation-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
     /* Donation Card */
     .donation-card {
       background: var(--surface-color);
@@ -216,15 +194,8 @@
       padding: 3rem;
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
       animation: fadeInUp 0.6s ease forwards;
-    }
-
-    .donation-card.monero {
-      animation-delay: 0.1s;
-    }
-
-    .donation-card.litecoin {
-      animation-delay: 0.2s;
     }
 
     @keyframes fadeInUp {
@@ -238,36 +209,14 @@
       }
     }
 
-    .crypto-logo {
+    .monero-logo {
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .crypto-logo i {
+    .monero-logo i {
       font-size: 5rem;
-    }
-
-    .crypto-logo.monero i {
       color: var(--monero-color);
-    }
-
-    .crypto-logo.litecoin i {
-      color: var(--litecoin-color);
-    }
-
-    .crypto-name {
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-
-    .crypto-name.monero {
-      color: var(--monero-color);
-    }
-
-    .crypto-name.litecoin {
-      color: var(--litecoin-color);
     }
 
     .address-container {
@@ -316,14 +265,6 @@
       margin-top: 1rem;
     }
 
-    .copy-button.monero {
-      background: linear-gradient(135deg, var(--monero-color), #ff8533);
-    }
-
-    .copy-button.litecoin {
-      background: linear-gradient(135deg, var(--litecoin-color), #4a7cc5);
-    }
-
     .copy-button:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
@@ -341,7 +282,7 @@
       text-align: center;
       margin: 2rem 0;
       padding: 2rem;
-      background: var(--bg-color);
+      background: var(--surface-color);
       border-radius: 15px;
       display: inline-block;
       width: 100%;
@@ -369,16 +310,6 @@
       margin-top: 2rem;
     }
 
-    .info-box.monero {
-      background: rgba(255, 102, 0, 0.1);
-      border-left-color: var(--monero-color);
-    }
-
-    .info-box.litecoin {
-      background: rgba(52, 93, 157, 0.1);
-      border-left-color: var(--litecoin-color);
-    }
-
     .info-box p {
       color: var(--text-secondary);
       margin-bottom: 0.5rem;
@@ -389,8 +320,8 @@
     }
 
     .warning-box {
-      background: rgba(239, 68, 68, 0.1);
-      border-left: 4px solid #ef4444;
+      background: rgba(255, 102, 0, 0.1);
+      border-left: 4px solid var(--monero-color);
       border-radius: 10px;
       padding: 1.5rem;
       margin-top: 1rem;
@@ -456,10 +387,6 @@
         font-size: 1.1rem;
       }
 
-      .donation-grid {
-        grid-template-columns: 1fr;
-      }
-
       .donation-card {
         padding: 2rem 1.5rem;
       }
@@ -475,14 +402,6 @@
 
       main {
         padding: 2rem 1rem;
-      }
-
-      .header-icon-container {
-        gap: 1rem;
-      }
-
-      .header-icon {
-        font-size: 3rem;
       }
     }
 
@@ -512,92 +431,48 @@
     <div class="container">
       <!-- Header Section -->
       <section class="header-section">
-        <div class="header-icon-container">
-          <div class="header-icon monero">
-            <i class="fab fa-monero"></i>
-          </div>
-          <div class="header-icon litecoin">
-            <i class="fab fa-litecoin"></i>
-          </div>
+        <div class="header-icon">
+          <i class="fab fa-monero"></i>
         </div>
-        <h1 class="header-title">Kripto ile Bağış Yap</h1>
+        <h1 class="header-title">Monero ile Bağış Yap</h1>
         <p class="header-description">
-          Çalışmalarımı desteklemek isterseniz Monero (XMR) veya Litecoin (LTC) ile bağış yapabilirsiniz.
+          Çalışmalarımı desteklemek isterseniz Monero (XMR) ile bağış yapabilirsiniz.
         </p>
       </section>
 
-      <!-- Donation Cards Grid -->
-      <div class="donation-grid">
-        <!-- Monero Card -->
-        <div class="donation-card monero">
-          <div class="crypto-logo monero">
-            <i class="fab fa-monero"></i>
-          </div>
-          
-          <h2 class="crypto-name monero">Monero</h2>
+      <!-- Donation Card -->
+      <div class="donation-card">
+        <div class="monero-logo">
+          <i class="fab fa-monero" style="color: var(--monero-color);"></i>
+        </div>
 
-          <div class="qr-container">
-            <div class="qr-placeholder">
-              <img src="../assets/monero_donation_qr.png" alt="Monero QR Code" />
-            </div>
-          </div>
-
-          <div class="address-container">
-            <div class="address-label">Monero (XMR) Adresi</div>
-            <div class="address-text" id="xmrAddress">
-              8AXnN3hDmT6c48erhvQxVPFi8fgN5LaJvdQtBvkTSK9CDHmYjDnzTmvfHUGWxVm52Q2qrLC6FNYUCGwTEDxsFgUL7WuVnru
-            </div>
-          </div>
-
-          <button class="copy-button monero" id="copyMoneroButton">
-            <i class="fas fa-copy"></i>
-            <span id="copyMoneroButtonText">Adresi Kopyala</span>
-          </button>
-
-          <div class="info-box monero">
-            <p><strong>Neden Monero?</strong></p>
-            <p>Monero, gizlilik odaklı bir kripto para birimidir. Tüm işlemler tamamen gizlidir ve takip edilemez.</p>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Önemli:</strong> Lütfen sadece Monero (XMR) gönderin. Başka kripto paralar bu adrese gönderilirse kaybolur.</p>
+        <div class="qr-container">
+          <div class="qr-placeholder">
+            <img
+              src="../assets/monero_donation_qr.png"
+            />
           </div>
         </div>
 
-        <!-- Litecoin Card -->
-        <div class="donation-card litecoin">
-          <div class="crypto-logo litecoin">
-            <i class="fab fa-litecoin"></i>
+        <div class="address-container">
+          <div class="address-label">Monero (XMR) Adresi</div>
+          <div class="address-text" id="xmrAddress">
+            8AXnN3hDmT6c48erhvQxVPFi8fgN5LaJvdQtBvkTSK9CDHmYjDnzTmvfHUGWxVm52Q2qrLC6FNYUCGwTEDxsFgUL7WuVnru
           </div>
-          
-          <h2 class="crypto-name litecoin">Litecoin</h2>
+        </div>
 
-          <div class="qr-container">
-            <div class="qr-placeholder">
-              <img src="../assets/litecoin_donation_qr.png" alt="Litecoin QR Code" />
-            </div>
-          </div>
+        <button class="copy-button" id="copyButton">
+          <i class="fas fa-copy"></i>
+          <span id="copyButtonText">Adresi Kopyala</span>
+        </button>
 
-          <div class="address-container">
-            <div class="address-label">Litecoin (LTC) Adresi</div>
-            <div class="address-text" id="ltcAddress">
-              ltc1qep5fnrtt54edvq9hvw0yrh4augklt82zrgp67h
-            </div>
-          </div>
+        <div class="info-box">
+          <p><strong>Neden Monero?</strong></p>
+          <p>Monero, gizlilik odaklı bir kripto para birimidir. Tüm işlemler tamamen gizlidir ve takip edilemez.</p>
+        </div>
 
-          <button class="copy-button litecoin" id="copyLitecoinButton">
-            <i class="fas fa-copy"></i>
-            <span id="copyLitecoinButtonText">Adresi Kopyala</span>
-          </button>
-
-          <div class="info-box litecoin">
-            <p><strong>Neden Litecoin?</strong></p>
-            <p>Litecoin, hızlı işlem süreleri ve düşük işlem ücretleriyle tanınan güvenilir bir kripto para birimidir.</p>
-          </div>
-
-          <div class="warning-box">
-            <p><strong>Önemli:</strong> Lütfen sadece Litecoin (LTC) gönderin. Başka kripto paralar bu adrese gönderilirse kaybolur.</p>
-          </div>
+        <div class="warning-box">
+          <p><strong>Önemli:</strong> Lütfen sadece Monero (XMR) gönderin. Başka kripto paralar bu adrese gönderilirse kaybolur.</p>
         </div>
       </div>
     </div>
@@ -639,40 +514,20 @@
       }
     }
 
-    // Copy Monero address functionality
-    const copyMoneroButton = document.getElementById('copyMoneroButton');
-    const copyMoneroButtonText = document.getElementById('copyMoneroButtonText');
+    // Copy address functionality
+    const copyButton = document.getElementById('copyButton');
+    const copyButtonText = document.getElementById('copyButtonText');
     const xmrAddress = document.getElementById('xmrAddress');
 
-    copyMoneroButton.addEventListener('click', async () => {
+    copyButton.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(xmrAddress.textContent.trim());
-        copyMoneroButton.classList.add('copied');
-        copyMoneroButtonText.textContent = 'Kopyalandı!';
+        copyButton.classList.add('copied');
+        copyButtonText.textContent = 'Kopyalandı!';
         
         setTimeout(() => {
-          copyMoneroButton.classList.remove('copied');
-          copyMoneroButtonText.textContent = 'Adresi Kopyala';
-        }, 2000);
-      } catch (err) {
-        console.error('Kopyalama başarısız:', err);
-      }
-    });
-
-    // Copy Litecoin address functionality
-    const copyLitecoinButton = document.getElementById('copyLitecoinButton');
-    const copyLitecoinButtonText = document.getElementById('copyLitecoinButtonText');
-    const ltcAddress = document.getElementById('ltcAddress');
-
-    copyLitecoinButton.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(ltcAddress.textContent.trim());
-        copyLitecoinButton.classList.add('copied');
-        copyLitecoinButtonText.textContent = 'Kopyalandı!';
-        
-        setTimeout(() => {
-          copyLitecoinButton.classList.remove('copied');
-          copyLitecoinButtonText.textContent = 'Adresi Kopyala';
+          copyButton.classList.remove('copied');
+          copyButtonText.textContent = 'Adresi Kopyala';
         }, 2000);
       } catch (err) {
         console.error('Kopyalama başarısız:', err);

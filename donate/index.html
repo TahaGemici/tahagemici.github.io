@@ -18,7 +18,6 @@
       --primary-color: #6366f1;
       --secondary-color: #8b5cf6;
       --monero-color: #ff6600;
-      --donate-color: #168118;
       --litecoin-color: #345d9d;
       --bg-color: #ffffff;
       --surface-color: #f8fafc;
@@ -168,11 +167,8 @@
 
     .header-icon {
       font-size: 4rem;
+      color: var(--primary-color);
       animation: pulse 2s ease-in-out infinite;
-    }
-
-    .header-icon.donate {
-      color: var(--donate-color);
     }
 
     @keyframes pulse {
@@ -510,7 +506,7 @@
       <!-- Header Section -->
       <section class="header-section">
         <div class="header-icon-container">
-          <div class="header-icon donate">
+          <div class="header-icon">
             <i class="fa fa-hand-holding-dollar"></i>
           </div>
         </div>
